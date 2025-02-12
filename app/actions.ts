@@ -35,7 +35,7 @@ export async function uploadImage(formData: FormData) {
         };
     }
     // verify if the AWS S3 bucket is too large
-    if (await bucketHasTooManyObjects()) {
+    if (await bucketHasTooManyObjects()) { 
         return {
             success: false,
             message:
