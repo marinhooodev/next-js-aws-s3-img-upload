@@ -27,11 +27,11 @@ export async function uploadImage(formData: FormData) {
         };
     }
 
-    // 0.5MB limit
-    if (image.size > 1.5 * 1024 * 1024) {
+    // 0.4MB limit
+    if (image.size > 0.4 * 1024 * 1024) {
         return {
             success: false,
-            message: "File size too large",
+            message: "File size too large. 400kb limit",
         };
     }
     // verify if the AWS S3 bucket is too large
