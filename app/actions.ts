@@ -36,7 +36,7 @@ export async function uploadImage(formData: FormData) {
     }
     // verify if the AWS S3 bucket is too large
     if (await bucketHasTooManyObjects()) { 
-        return {
+        return { 
             success: false,
             message:
                 "This application has too many images. Please delete some images before uploading more.",
