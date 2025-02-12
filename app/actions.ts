@@ -74,8 +74,6 @@ export async function uploadImage(formData: FormData) {
 export async function uploadImageWithUppy(formData: FormData) {
     const images: File[] = formData.getAll("images") as File[];
 
-    console.log(images);
-
     images.forEach(async (image) => {
         if (!image.size) {
             return {
@@ -92,7 +90,7 @@ export async function uploadImageWithUppy(formData: FormData) {
         }
 
         // 0.5MB limit
-        if (image.size > 1.5 * 1024 * 1024) {
+        if (image.size > 0.4 * 1024 * 1024) {
             return {
                 success: false,
                 message: "File size too large",
